@@ -6,13 +6,19 @@ import java.util.List;
 public class Subject {
     private List<ObserverClass> observers = new ArrayList<>();
     private String msg;
+    private int priority;
+
+    public int getPriority() {
+        return priority;
+    }
 
     public String getMsg() {
         return msg;
     }
 
-    public void setMsg(String msg) {
+    public void setMsg(String msg, int priority) {
         this.msg = msg;
+        this.priority=priority;
         notifyAllObservers();
     }
     public void notifyAllObservers(){
@@ -22,5 +28,8 @@ public class Subject {
     }
     public void attach(mizak.patterns.Observer.test2.ObserverClass observer){
         observers.add(observer);
+    }
+    public void remove(ObserverClass observer){
+        observers.remove(observer);
     }
 }

@@ -8,6 +8,11 @@ public class FB extends ObserverClass{
 
     @Override
     public void update() {
-        System.out.println("FB: "+subject.getMsg());
+        if (subject.getPriority()<=2)
+            System.out.println("FB: "+subject.getMsg());
+    }
+    public void remove(){
+        subject.remove(this);
+
     }
 }

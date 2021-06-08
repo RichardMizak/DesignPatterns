@@ -8,6 +8,10 @@ public class SMS extends ObserverClass{
 
     @Override
     public void update() {
-        System.out.println("SMS: "+subject.getMsg());
+        if (subject.getPriority()==1)
+            System.out.println("SMS: "+subject.getMsg());
+    }
+    public void remove(){
+        subject.remove(this);
     }
 }

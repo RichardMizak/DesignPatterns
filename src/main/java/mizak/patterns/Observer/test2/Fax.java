@@ -8,6 +8,10 @@ public class Fax extends ObserverClass{
 
     @Override
     public void update() {
-        System.out.println("Fax: "+subject.getMsg());
+        if (subject.getPriority()==1)
+            System.out.println("Fax: "+subject.getMsg());
+    }
+    public void remove(){
+        subject.remove(this);
     }
 }

@@ -9,6 +9,9 @@ public class Email extends ObserverClass{
 
     @Override
     public void update() {
-        System.out.println("Email: "+subject.getMsg());
+            System.out.println("Email: "+subject.getMsg());
+    }
+    public void remove(){
+        subject.remove(this);
     }
 }
